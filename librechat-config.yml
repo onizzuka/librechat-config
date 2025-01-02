@@ -1,0 +1,55 @@
+version: 1.1.6
+
+cache: true
+
+registration:
+  socialLogins: ["discord", "facebook", "github", "google", "openid"]
+
+endpoints:
+  custom:
+     # deepseek
+    # https://platform.deepseek.com/api_keys
+    # Model list: https://platform.deepseek.com/api-docs/pricing
+    - name: "deepseek"
+      apiKey: "${DEEPSEEK_API_KEY}"
+      baseURL: "https://api.deepseek.com"
+      models:
+        default: [
+          "deepseek-chat",
+          "deepseek-coder"
+          ]
+        fetch: false
+      titleConvo: true
+      titleModel: "deepseek-chat"
+      summarize: false
+      summaryModel: "deepseek-chat"
+      forcePrompt: false
+      modelDisplayLabel: "DeepSeek"
+
+    # groq
+    # Model list: https://console.groq.com/settings/limits
+    - name: "groq"
+      apiKey: "${GROQ_API_KEY}"
+      baseURL: "https://api.groq.com/openai/v1/"
+      models:
+        default: [
+          "gemma2-9b-it",
+          "gemma-7b-it",
+          "llama-3.1-8b-instant",
+          "llama3-groq-70b-8192-tool-use-preview",
+          "llama3-groq-8b-8192-tool-use-preview",
+          "llama-3.1-70b-versatile",
+          "llama-3.1-70b-specdec",
+          "llama-3.1-8b-instant",
+          "llama-3.2-1b-preview",
+          "llama-3.2-3b-preview",
+          "llama-3.2-11b-vision-preview",
+          "llama-3.2-90b-vision-preview",
+          "llama3-70b-8192",
+          "llama3-8b-8192",
+          "mixtral-8x7b-32768",
+          ]
+        fetch: false
+      titleConvo: true
+      titleModel: "mixtral-8x7b-32768"
+      modelDisplayLabel: "groq"
